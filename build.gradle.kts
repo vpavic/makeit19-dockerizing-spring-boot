@@ -4,6 +4,7 @@ plugins {
     java
     id("org.springframework.boot") version "2.1.8.RELEASE"
     id("com.gorylenko.gradle-git-properties") version "2.2.0"
+    id("com.google.cloud.tools.jib") version "1.6.1"
 }
 
 group = "demo"
@@ -27,4 +28,10 @@ dependencies {
 
 springBoot {
     buildInfo()
+}
+
+jib {
+    from {
+        image = "adoptopenjdk:8u222-b10-jre-hotspot"
+    }
 }

@@ -21,18 +21,18 @@ $ ./gradlew build
 
 Demo application is a simple Spring Boot application with a _greet_ endpoint and exposed build info via Actuator's `info` endpoint.
 
-Build application Docker image using supplied `Dockerfile`:
+Build application Docker image Jib's `jibDockerBuild`:
 
 [source,bash]
 ----
-$ docker build -t makeit19-dockerizing-spring-boot .
+$ ./gradlew jibDockerBuild
 ----
 
 And run application using:
 
 [source,bash]
 ----
-$ docker run -p 8080:8080 makeit19-dockerizing-spring-boot
+$ docker run -p 8080:8080 makeit19-dockerizing-spring-boot:0.1.0
 ----
 
 Then access the _greet_ endpoint and Actuator `info` endpoint (examples use HTTPie):
