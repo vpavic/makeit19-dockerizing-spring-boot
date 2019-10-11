@@ -1,3 +1,41 @@
 = MakeIT 2019 - Dockerizing Spring Boot Applications: Makings of a Better Docker Image
 
 This repo contains demos to accompany https://www.makeit.si/index.php/vsebina/java-devops/item/80-dockerizing-spring-boot-applications-makings-of-a-better-docker-image[Dockerizing Spring Boot Applications: Makings of a Better Docker Image] talk at MakeIT 2019.
+
+== Prerequisites
+
+* Git
+* Java 8
+* Docker
+
+== Building the project
+
+[source,bash]
+----
+$ git clone git@github.com:vpavic/makeit19-dockerizing-spring-boot.git
+$ cd makeit19-dockerizing-spring-boot
+$ ./gradlew build
+----
+
+== Demo
+
+Demo application is a simple Spring Boot application with a _greet_ endpoint and exposed build info via Actuator's `info` endpoint.
+
+Run the application from your IDE or using Gradle's `bootRun` task:
+
+[source,bash]
+----
+$ ./gradlew bootRun
+----
+
+Then access the _greet_ endpoint and Actuator `info` endpoint (examples use HTTPie):
+
+[source,bash]
+----
+$ http :8080
+----
+
+[source,bash]
+----
+$ http :8080/actuator/info
+----
