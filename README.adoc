@@ -1,0 +1,3 @@
+= MakeIT 2019 - Dockerizing Spring Boot Applications: Makings of a Better Docker Image
+
+This repo contains demos to accompany https://www.makeit.si/index.php/vsebina/java-devops/item/80-dockerizing-spring-boot-applications-makings-of-a-better-docker-image[Dockerizing Spring Boot Applications: Makings of a Better Docker Image] talk at MakeIT 2019.
