@@ -27,7 +27,15 @@ dependencies {
 }
 
 springBoot {
-    buildInfo()
+    buildInfo {
+        properties {
+            time = null
+        }
+        doLast {
+            val f = File(destinationDir, "build-info.properties")
+            f.writeText(f.readLines().filter { !it.startsWith("#") }.joinToString("\n"))
+        }
+    }
 }
 
 jib {
