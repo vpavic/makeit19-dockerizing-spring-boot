@@ -2,7 +2,7 @@ import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 plugins {
     java
-    id("org.springframework.boot") version "2.1.8.RELEASE"
+    id("org.springframework.boot") version "2.2.0.RC1"
     id("com.gorylenko.gradle-git-properties") version "2.2.0"
     id("com.google.cloud.tools.jib") version "1.6.1"
 }
@@ -15,6 +15,7 @@ java {
 
 repositories {
     mavenCentral()
+    maven(url = "https://repo.spring.io/libs-milestone/")
 }
 
 dependencies {
@@ -30,10 +31,6 @@ springBoot {
     buildInfo {
         properties {
             time = null
-        }
-        doLast {
-            val f = File(destinationDir, "build-info.properties")
-            f.writeText(f.readLines().filter { !it.startsWith("#") }.joinToString("\n"))
         }
     }
 }
